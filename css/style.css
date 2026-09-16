@@ -1,7 +1,4 @@
 
-       /* ==========================
-          GLOBAL
-       ========================== */
 
    *{
        margin:0;
@@ -134,9 +131,6 @@ body::before{
     transform:translateY(-2px);
 }
 
-/* ==========================
-   HOME PAGE
-========================== */
 
 #gorno{
     display:flex;
@@ -279,9 +273,7 @@ body::before{
     z-index:2;
 }
 
-/* ==========================
-   FLOATING NUTS
-========================== */
+
 
 .floating-nuts,
 .floating-top,
@@ -334,9 +326,7 @@ body::before{
     100%{transform:translateY(0px) rotate(0deg);}
 }
 
-/* ==========================
-   ABOUT PAGE
-========================== */
+
 
 #hero{
     width:100%;
@@ -362,44 +352,49 @@ body::before{
     color:#444;
 }
 
-#pocetok{
-    display:flex;
-    justify-content:center;
-    margin-top:-200px;
-    position:relative;
-}
+   #pocetok{
+       width:100%;
+       position:relative;
+       display:flex;
+       justify-content:center;
+       align-items:center;
+       margin-top:-80px;
+   }
 
-#lenta{
-    width:88%;
-}
+   #lenta{
+       width:88%;
+       display:block;
+   }
 
-#content-lenta{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    width:88%;
-}
+   #content-lenta{
+       position:absolute;
+       top:50%;
+       left:50%;
+       transform:translate(-50%, -50%);
+       width:70%;
+       display:flex;
+       justify-content:center;
+       align-items:center;
+       gap:70px;
+   }
 
-#vesnik{
-    width:240px;
-    position:absolute;
-    top:440px;
-    left:330px;
-    transform:rotate(-8deg);
-}
+   #vesnik{
+       width:240px;
+       position:relative;
+       transform:rotate(-8deg);
+       flex-shrink:0;
+   }
 
-#tekst-lenta{
-    width:520px;
-    position:absolute;
-    right:350px;
-    top:450px;
-    font-size:25px;
-    font-weight:600;
-    color:#2e7d32;
-    transform:rotate(-7deg);
-    line-height:1.6;
-    text-shadow:2px 2px 6px rgba(0,0,0,.2);
-}
+   #tekst-lenta{
+       width:520px;
+       position:relative;
+       font-size:25px;
+       font-weight:600;
+       color:#2e7d32;
+       transform:rotate(-7deg);
+       line-height:1.6;
+       text-shadow:2px 2px 6px rgba(0,0,0,.2);
+   }
 
 #section2{
     width:100%;
@@ -1342,3 +1337,11 @@ textarea{
         width:90%;
     }
 }
+   .contactFooter{
+       margin-top:40px;
+       padding:25px 20px;
+       background:#f7f3e8;
+       text-align:center;
+       font-size:15px;
+       color:#666;
+   }
