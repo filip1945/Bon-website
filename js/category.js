@@ -13,7 +13,7 @@ const titles = {
     zrnesti: "Зрнести производи",
     suvo: "Суво овошје",
     seminja: "Семиња",
-    cooking: "BON Cooking"
+    cooking: "Cooking"
 };
 
 
@@ -103,13 +103,12 @@ const data = {
     ]
 };
 
-/* TITLE */
 if(titles[cat]){
     naslov.innerHTML = `BON <span>${titles[cat]}</span>`;
     document.title = titles[cat] + " - BON";
 }
 
-/* GENERATE PRODUCTS */
+
 if(data[cat]){
 
     data[cat].forEach(p => {
@@ -149,7 +148,6 @@ if(data[cat]){
 
 }
 
-/* ANIMATIONS */
 
 window.addEventListener("load", () => {
 
