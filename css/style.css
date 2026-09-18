@@ -6,6 +6,13 @@
        box-sizing:border-box;
    }
 
+   html,
+   body{
+       width:100%;
+       max-width:100%;
+       overflow-x:hidden;
+   }
+
 body{
     font-family:'Poppins',sans-serif;
     overflow-x:hidden;
@@ -403,6 +410,7 @@ body::before{
     display:flex;
     align-items:center;
     margin-top:-130px;
+    overflow:visible;
 }
 
 #levo{
@@ -1231,112 +1239,873 @@ textarea{
     }
 }
 
-@media(max-width:768px){
+   #hamburger{
+       display:none;
+       background:none;
+       border:none;
+       font-size:32px;
+       color:#1f7a33;
+       cursor:pointer;
+   }
 
-    #nav{
-        flex-direction:column;
-        height:auto;
-        padding:20px;
-        gap:20px;
-    }
 
-    #menu{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:25px;
-    }
+   @media(max-width:768px){
 
-    #naslov{
-        font-size:38px;
-    }
+       #hamburger{
+           display:block;
+       }
 
-    #opis{
-        font-size:18px;
-    }
+       #menu{
+           display:none;
+           width:100%;
+           flex-direction:column;
+           align-items:center;
+       }
 
-    #kopcinja{
-        justify-content:center;
-        flex-wrap:wrap;
-    }
+       #menu.active{
+           display:flex;
+       }
 
-    #goredesno img{
-        width:100%;
-    }
+       .t5,
+       .t6,
+       .t7,
+       .t8{
+           display:none;
+       }
 
-    #delkatalog h3{
-        font-size:26px;
-    }
+       /* Распоред на останатите */
 
-    #sliki{
-        flex-direction:column;
-    }
+       .t1{
+           width:24px;
+           top:55px;
+           left:7%;
+       }
 
-    #ververica img,
-    #tv img{
-        width:90%;
-        margin-left:0;
-        transform:none;
-    }
+       .t2{
+           width:27px;
+           top:45px;
+           right:7%;
+       }
 
-    #hero h1,
-    #kat-naslov h1,
-    #section3 #naslov h1{
-        font-size:45px;
-    }
+       .t3{
+           width:25px;
+           top:180px;
+           left:10%;
+       }
 
-    #hero p,
-    #kat-naslov p{
-        font-size:20px;
-    }
+       .t4{
+           width:24px;
+           top:170px;
+           right:10%;
+       }
 
-    #hero.products-hero,
-    #hero.category-hero,
-    #hero.product-details{
-        width:95%;
-        padding:30px;
-    }
+       #nav{
+           height:auto;
+           min-height:75px;
+           padding:0 20px;
+           display:flex;
+           flex-direction:row;
+           justify-content:space-between;
+           align-items:center;
+           flex-wrap:wrap;
+       }
 
-    #hero-text{
-        width:100%;
-    }
+       #logo img,
+       #slika{
+           height:70px;
+       }
 
-    #mini-boxes{
-        flex-direction:column;
-    }
+       #hamburger{
+           display:block;
+       }
 
-    #kat-grid,
-    #products{
-        grid-template-columns:1fr;
-    }
+       #menu{
+           display:none;
+           position:static;
+           width:100%;
+           flex-direction:column;
+           align-items:center;
+           gap:0;
+           padding:10px 0 15px;
+           background:transparent;
+           box-shadow:none;
+       }
 
-    #productTitle{
-        font-size:42px;
-    }
+       #menu.active{
+           display:flex;
+       }
 
-    #productImg{
-        width:90%;
-    }
+       #menu a{
+           width:100%;
+           padding:10px;
+           text-align:center;
+           font-size:16px;
+       }
 
-    #prvred{
-        flex-direction:column;
-    }
 
-    #desen h1{
-        font-size:50px;
-    }
+       /* ==========================
+          HOME - HERO
+       ========================== */
 
-    #desen h3{
-        font-size:30px;
-    }
+       #gorno{
+           height:auto;
+           padding:35px 20px 20px;
+           gap:30px;
+           flex-direction:column;
+           text-align:center;
+       }
 
-    #desen p{
-        font-size:20px;
-    }
+       #gorelevo{
+           width:100%;
+           max-width:none;
+           display:flex;
+           flex-direction:column;
+           align-items:center;
+           text-align:center;
+       }
 
-    #lev img{
-        width:90%;
-    }
-}
+       #naslov{
+           width:100%;
+           font-size:38px;
+           text-align:center;
+       }
+
+       #opis{
+           width:100%;
+           max-width:340px;
+           font-size:18px;
+           text-align:center;
+       }
+
+       #kopcinja{
+           width:100%;
+           display:flex;
+           justify-content:center;
+           align-items:center;
+           flex-wrap:wrap;
+           gap:15px;
+       }
+
+       #goredesno{
+           width:100%;
+           display:flex;
+           justify-content:center;
+           align-items:center;
+           margin-top:0;
+       }
+
+       #goredesno img{
+           width:90%;
+           max-width:450px;
+           height:auto;
+       }
+
+
+       /* ==========================
+          HOME - STATS
+       ========================== */
+
+       #stats{
+           display:grid;
+           grid-template-columns:repeat(2, 1fr);
+           width:100%;
+           height:auto;
+           gap:30px 15px;
+           padding:30px 20px 10px;
+           margin-top:10px;
+           margin-bottom:0;
+       }
+
+       .stat{
+           width:100%;
+           text-align:center;
+       }
+
+       .stat h2{
+           font-size:34px;
+       }
+
+       .stat p{
+           font-size:14px;
+           margin-top:5px;
+       }
+
+
+       /* ==========================
+          HOME - CATALOG
+       ========================== */
+
+       #delkatalog{
+           margin-top:-30px;
+           min-height:auto;
+           padding:30px 15px;
+           text-align:center;
+           align-items:center;
+       }
+
+       #delkatalog h3{
+           width:100%;
+           font-size:26px;
+           text-align:center;
+       }
+
+       #opisKatalog{
+           width:100%;
+           max-width:330px;
+           margin:10px auto 0;
+           text-align:center;
+           font-size:16px;
+       }
+
+       #delkatalog .kopce{
+           margin:20px auto;
+       }
+
+       #sliki{
+           width:100%;
+           display:flex;
+           flex-direction:row;
+           justify-content:center;
+           align-items:center;
+           gap:0;
+       }
+
+       #ververica{
+           width:45%;
+           display:flex;
+           justify-content:flex-end;
+           align-items:center;
+           transform:translateX(35px);
+           position:relative;
+           z-index:2;
+       }
+
+       #ververica img{
+           width:100%;
+           max-width:190px;
+           margin:0;
+           transform:none;
+       }
+
+       #desendel{
+           width:55%;
+           display:flex;
+           justify-content:flex-start;
+           align-items:center;
+           transform:translateX(-35px);
+       }
+
+       #tv{
+           width:100%;
+       }
+
+       #tv img{
+           width:100%;
+           max-width:230px;
+           margin:0;
+           transform:none;
+       }
+
+
+       /* ==========================
+          ABOUT - HERO
+       ========================== */
+
+       #hero:not(.products-hero):not(.category-hero):not(.product-details){
+           width:100%;
+           min-height:300px;
+           padding:40px 15px 20px;
+           text-align:center;
+           position:relative;
+           display:block;
+       }
+
+       #hero:not(.products-hero):not(.category-hero):not(.product-details) small{
+           font-size:14px;
+       }
+
+       #hero:not(.products-hero):not(.category-hero):not(.product-details) h1{
+           width:100%;
+           font-size:38px;
+           line-height:1.15;
+           margin:15px 0 10px;
+           text-align:center;
+       }
+
+       #hero:not(.products-hero):not(.category-hero):not(.product-details) p{
+           width:100%;
+           font-size:17px;
+           text-align:center;
+       }
+
+
+       /* ==========================
+          ABOUT - FLOATING NUTS
+       ========================== */
+
+       .nut,
+       .topnut{
+           width:30px;
+       }
+
+       .t1{
+           top:80px;
+           left:5%;
+       }
+
+       .t2{
+           top:55px;
+           right:6%;
+       }
+
+       .t3{
+           top:190px;
+           left:10%;
+       }
+
+       .t4{
+           top:175px;
+           right:12%;
+       }
+
+       .t5{
+           top:120px;
+           left:25%;
+       }
+
+       .t6{
+           top:90px;
+           right:27%;
+       }
+
+       .t7{
+           top:235px;
+           right:7%;
+       }
+
+       .t8{
+           top:245px;
+           left:32%;
+       }
+
+
+       /* ==========================
+          ABOUT - HISTORY STRIP
+       ========================== */
+
+       #pocetok{
+           width:92%;
+           height:230px;
+           margin:0 auto 15px;
+           position:relative;
+       }
+
+       #lenta{
+           position:absolute;
+           width:100%;
+           height:150px;
+           top:40px;
+           left:0;
+           object-fit:cover;
+       }
+
+       #content-lenta{
+           position:absolute;
+           width:100%;
+           height:100%;
+
+           top:0;
+           left:0;
+
+           transform:none;
+           display:block;
+       }
+
+       #vesnik{
+           position:absolute;
+           left:20px;
+           top:35px;
+
+           width:130px;
+           height:auto;
+
+           transform:rotate(-5deg);
+           z-index:4;
+       }
+
+       #tekst-lenta{
+           position:absolute;
+
+           /* позиција врз зелената лента */
+           left:145px;
+           top:85px;
+
+           width:175px;
+
+           font-size:9px;
+           line-height:1.25;
+           font-weight:600;
+           color:#2e7d32;
+
+           text-align:center;
+
+           transform:rotate(-7deg);
+           transform-origin:center;
+
+           text-shadow:none;
+           z-index:3;
+       }
+
+
+
+
+       #section2{
+           width:92%;
+           height:430px;
+           min-height:430px;
+
+           margin:25px auto 35px;
+           padding:0;
+
+           position:relative;
+           display:block;
+
+           background:rgba(255,255,255,.30);
+           border-radius:30px;
+
+           overflow:visible;
+       }
+
+       #levo{
+           width:100%;
+           margin:0;
+           padding:28px 20px;
+
+           background:transparent;
+           box-shadow:none;
+
+           text-align:left;
+           position:relative;
+           z-index:4;
+       }
+
+       #levo h2{
+           font-size:32px;
+           line-height:1.15;
+           margin:0 0 14px;
+       }
+
+       #levo .text{
+           width:85%;
+           font-size:12px;
+           line-height:1.55;
+           margin-bottom:18px;
+       }
+
+       .list{
+           width:80%;
+       }
+
+       .list div{
+           font-size:12px;
+           line-height:1.4;
+           margin-bottom:10px;
+       }
+
+       #levo .kopce{
+           width:160px;
+           height:40px;
+           font-size:11px;
+
+           margin-top:12px;
+       }
+
+       /* Сликата со старите кикирики */
+
+       #desno{
+           position:absolute;
+
+           right:-65px;   /* повеќе десно */
+           bottom:-15px;  /* повеќе долу */
+
+           width:300px;
+
+           margin:0;
+           padding:0;
+           transform:none;
+           z-index:3;
+       }
+
+       #desno img{
+           width:100%;
+           max-width:none;
+           height:auto;
+
+           display:block;
+           margin:0;
+           padding:0;
+       }
+
+
+
+
+
+
+       #section3{
+           width:100%;
+           padding:45px 18px 50px;
+           text-align:center;
+       }
+
+       #section3 #naslov{
+           width:100%;
+           max-width:350px;
+           margin:0 auto 30px;
+           text-align:center;
+       }
+
+       #section3 #naslov h2{
+           font-size:15px;
+           line-height:1.4;
+           margin-bottom:12px;
+       }
+
+       #section3 #naslov h1{
+           font-size:36px;
+           line-height:1.15;
+           margin-bottom:15px;
+       }
+
+       #section3 #naslov p{
+           width:100%;
+           max-width:340px;
+           font-size:16px;
+           line-height:1.6;
+           margin:0 auto;
+       }
+
+       #section3 #naslov p br{
+           display:none;
+       }
+
+       #content{
+           width:100%;
+           display:flex;
+           justify-content:center;
+       }
+
+       #karticki{
+           width:100%;
+           max-width:350px;
+           display:flex;
+           flex-direction:column;
+           gap:16px;
+       }
+
+       #red1,
+       #red2{
+           width:100%;
+           display:flex;
+           flex-direction:column;
+           align-items:center;
+           gap:16px;
+       }
+
+       #section3 .karticka{
+           width:100%;
+           min-height:190px;
+           padding:25px 18px;
+       }
+
+       #section3 .karticka img{
+           width:55px;
+           height:55px;
+       }
+
+       #section3 .karticka h3{
+           font-size:18px;
+       }
+
+       #section3 .karticka p{
+           font-size:14px;
+       }
+
+
+       /* ==========================
+          PRODUCTS PAGE
+       ========================== */
+
+       #hero.products-hero{
+           width:95%;
+           min-height:auto;
+           margin:20px auto;
+           padding:35px 20px;
+           text-align:center;
+       }
+
+       #hero-text{
+           width:100%;
+       }
+
+       #hero-text h1{
+           font-size:40px;
+           line-height:1.1;
+       }
+
+       #hero-text p{
+           font-size:17px;
+       }
+
+       #mini-boxes{
+           flex-direction:column;
+           align-items:center;
+       }
+
+       #kat-naslov h1{
+           font-size:40px;
+       }
+
+       #kat-naslov p{
+           font-size:18px;
+       }
+
+       #kat-grid{
+           width:92%;
+           grid-template-columns:1fr;
+       }
+
+
+       /* ==========================
+          CATEGORY PAGE
+       ========================== */
+
+       #naslov.category-title{
+           width:100%;
+           font-size:38px;
+           margin:30px auto 10px;
+           padding:0 15px;
+       }
+
+       #hero.category-hero{
+           width:95%;
+           min-height:auto;
+           padding:25px 15px;
+       }
+
+       #products{
+           width:100%;
+           grid-template-columns:1fr;
+       }
+
+       .product{
+           width:100%;
+       }
+
+
+       /* ==========================
+          PRODUCT DETAILS
+       ========================== */
+
+       #hero.product-details{
+           width:95%;
+           min-height:auto;
+           margin:25px auto;
+           padding:30px 20px;
+           flex-direction:column;
+           gap:25px;
+           text-align:center;
+       }
+
+       #left,
+       #right{
+           width:100%;
+       }
+
+       #productImg{
+           width:90%;
+           max-width:300px;
+           height:320px;
+       }
+
+       #productTitle{
+           font-size:40px;
+       }
+
+       #right #opis{
+           width:100%;
+           font-size:17px;
+       }
+
+       #nutritivnost{
+           justify-content:center;
+       }
+
+
+
+
+       #prvdel{
+           width:100%;
+           padding:30px 20px 10px;
+           flex-direction:column;
+           gap:25px;
+           text-align:center;
+       }
+
+       #lev{
+           width:100%;
+           display:flex;
+           justify-content:center;
+       }
+
+       #lev img{
+           width:80%;
+           max-width:300px;
+       }
+
+       #desen{
+           width:100%;
+           text-align:center;
+       }
+
+       #desen h1{
+           font-size:48px;
+       }
+
+       #desen h3{
+           font-size:28px;
+       }
+
+       #desen p{
+           font-size:18px;
+       }
+
+       #kontakt{
+           width:100%;
+           padding:25px 15px;
+           flex-direction:column;
+           align-items:center;
+       }
+
+       #socijalni,
+       #forma{
+           width:100%;
+           max-width:500px;
+       }
+
+       #socijalni{
+           padding:25px 20px;
+       }
+
+       #socijalni h3{
+           font-size:28px;
+       }
+
+       .info h4{
+           font-size:19px;
+       }
+
+       .info p{
+           font-size:16px;
+           overflow-wrap:anywhere;
+       }
+
+       #naslovForma{
+           padding:20px;
+           font-size:28px;
+           text-align:center;
+       }
+
+       #formaVnatre{
+           padding:20px;
+       }
+
+       #prvred{
+           flex-direction:column;
+       }
+
+       input,
+       textarea{
+           font-size:16px;
+           padding:15px;
+       }
+
+       #forma button{
+           width:100%;
+           max-width:260px;
+           height:55px;
+           font-size:20px;
+       }
+
+       #mapa{
+           margin:25px 0;
+       }
+
+       #mapa iframe{
+           width:92%;
+           height:280px;
+       }
+
+
+
+       #footer{
+           margin-top:40px;
+           padding:35px 20px 20px;
+       }
+
+       .footerInfo{
+           width:100%;
+           flex-direction:column;
+           align-items:center;
+           gap:25px;
+       }
+
+       .infoBlock{
+           width:100%;
+           max-width:300px;
+       }
+
+       .infoBlock p{
+           min-height:auto;
+           font-size:14px;
+       }
+
+       #footerBottom{
+           margin-top:30px;
+           font-size:13px;
+       }
+       #hero .topnut{
+           width:24px;
+       }
+
+       #section2 .nut{
+           width:22px;
+       }
+
+       #nutritivnost{
+           display:grid;
+           grid-template-columns:repeat(2, 1fr);
+           gap:18px;
+           width:100%;
+       }
+
+       .nutri{
+           width:100%;
+           min-width:0;
+           padding:20px 8px;
+           text-align:center;
+       }
+
+       .nutri span{
+           font-size:28px;
+       }
+
+       .nutri p{
+           font-size:17px;
+           white-space:normal;
+           overflow-wrap:break-word;
+       }
+
+   }
    .contactFooter{
        margin-top:40px;
        padding:25px 20px;

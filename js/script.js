@@ -274,5 +274,11 @@ window.addEventListener("load", function () {
         duration: 1600,
         easing: "easeOutExpo"
     });
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+
+    hamburger.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
 
 });
