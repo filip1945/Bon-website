@@ -47,9 +47,7 @@ body::before{
     100%{transform:scale(1) translate(0px,0px);}
 }
 
-/* ==========================
-   NAVBAR
-========================== */
+
 
 #nav{
     width:100%;
@@ -2183,7 +2181,7 @@ textarea{
     transition: all 0.3s ease;
 }
 
-/* Accept button */
+
 
 #accept-cookies {
     background: #285c38;
@@ -2197,7 +2195,6 @@ textarea{
     transform: translateY(-2px);
 }
 
-/* Reject button */
 
 #reject-cookies {
     background: transparent;
@@ -2210,7 +2207,7 @@ textarea{
     transform: translateY(-2px);
 }
 
-/* Entrance animation */
+
 
 @keyframes cookieSlide {
     from {
@@ -2224,7 +2221,7 @@ textarea{
     }
 }
 
-/* Mobile responsive */
+
 
 @media (max-width: 600px) {
     .cookie-banner {
