@@ -801,7 +801,6 @@ window.addEventListener("load", () => {
 
 });
 
-/* BUTTON HOVER */
 
 kopce.addEventListener("mouseenter", () => {
 
