@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,12 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+
   <link rel="icon" type="image/png" href="images/lifce.png">
 </head>
+
 <body>
+
 <div id="nav">
 
   <div id="logo">
@@ -24,13 +28,20 @@
   </button>
 
   <div id="menu">
-    <a href="index.html">Почетна</a>
-    <a href="about us.html">За нас</a>
-    <a href="products.html">Производи</a>
-    <a href="contact.html">Контакт</a>
+    <a href="index.html" data-i18n="navHome">Почетна</a>
+    <a href="about us.html" data-i18n="navAbout">За нас</a>
+    <a href="products.html" data-i18n="navProducts">Производи</a>
+    <a href="contact.html" data-i18n="navContact">Контакт</a>
+
+    <div class="language-switch">
+      <button type="button" class="lang-btn" data-lang="mk">MK</button>
+      <span>|</span>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+    </div>
   </div>
 
 </div>
+
 <h1 id="naslov" class="category-title"></h1>
 
 <section id="hero" class="category-hero">
@@ -38,14 +49,18 @@
   <div id="products"></div>
 
 </section>
+
 <div id="footer">
+
   <div id="footerContent">
 
     <div class="footerInfo">
 
       <div class="infoBlock">
         <img src="images/maps-and-flags.png">
-        <p>Стопански комплекс с. Зубовце,<br>Гостивар Македонија</p>
+        <p data-i18n-html="categoryFooterAddress">
+          Стопански комплекс с. Зубовце,<br>Гостивар Македонија
+        </p>
       </div>
 
       <div class="infoBlock">
@@ -59,14 +74,18 @@
       </div>
 
       <div class="infoBlock">
-        <a href="https://www.facebook.com/profile.php?id=61584873085288" target="_blank">
+        <a href="https://www.facebook.com/profile.php?id=61584873085288"
+           target="_blank"
+           rel="noopener noreferrer">
           <img src="images/facebook%20(1).png">
         </a>
         <p>Bon Products</p>
       </div>
 
       <div class="infoBlock">
-        <a href="https://www.instagram.com/bonproducts.mk/" target="_blank">
+        <a href="https://www.instagram.com/bonproducts.mk/"
+           target="_blank"
+           rel="noopener noreferrer">
           <img src="images/instagram%20(1).png">
         </a>
         <p>bonproducts.mk</p>
@@ -76,15 +95,15 @@
 
   </div>
 
-  <div id="footerBottom">
+  <div id="footerBottom" data-i18n="copyright">
     © ИнтерКафе 2026. Сите права се задржани.
   </div>
+
 </div>
-
-
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="js/category.js"></script>
+<script src="js/translations.js"></script>
+
 </body>
 </html>

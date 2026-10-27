@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="mk">
 <head>
@@ -7,8 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/lifce.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-
 </head>
 
 <body>
@@ -24,10 +23,16 @@
     </button>
 
     <div id="menu">
-        <a href="index.html">Почетна</a>
-        <a href="about us.html">За нас</a>
-        <a href="products.html">Производи</a>
-        <a href="contact.html">Контакт</a>
+        <a href="index.html" data-i18n="navHome">Почетна</a>
+        <a href="about us.html" data-i18n="navAbout">За нас</a>
+        <a href="products.html" data-i18n="navProducts">Производи</a>
+        <a href="contact.html" data-i18n="navContact">Контакт</a>
+
+        <div class="language-switch">
+            <button type="button" class="lang-btn" data-lang="mk">MK</button>
+            <span>|</span>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
     </div>
 
 </div>
@@ -45,9 +50,9 @@
         <div class="topnut t8"><img src="images/badem.png"></div>
     </div>
 
-    <small>ЗА НАС</small>
-    <h1>Нашата приказна</h1>
-    <p>Од идеја до реалност</p>
+    <small data-i18n="aboutLabel">ЗА НАС</small>
+    <h1 data-i18n="aboutHeroTitle">Нашата приказна</h1>
+    <p data-i18n="aboutHeroSubtitle">Од идеја до реалност</p>
 
 </section>
 
@@ -57,7 +62,7 @@
     <div id="content-lenta">
         <img src="images/vesnik.jpg" id="vesnik">
 
-        <div id="tekst-lenta">
+        <div id="tekst-lenta" data-i18n-html="aboutBeginning">
             Во <strong>2003 година</strong> започна приказната на BON, бренд создаден со визија да понуди <strong>квалитет, вкус и доверба</strong> во секој производ.
         </div>
 
@@ -78,20 +83,22 @@
     </div>
 
     <div id="levo">
-        <h2>Што е следно?</h2>
+        <h2 data-i18n="aboutNextTitle">Што е следно?</h2>
 
-        <p class="text">
+        <p class="text" data-i18n-html="aboutPeanuts">
             Се раѓа идејата за производство на нашиот најпознат производ –
             <strong>Бон кикириките</strong>.
         </p>
 
         <div class="list">
-            <div>✓ Производството расте</div>
-            <div>✓ Луѓето го препознаваат вкусот</div>
-            <div>✓ BON низ цела Македонија</div>
+            <div data-i18n="aboutGrowth">✓ Производството расте</div>
+            <div data-i18n="aboutRecognition">✓ Луѓето го препознаваат вкусот</div>
+            <div data-i18n="aboutExpansion">✓ BON низ цела Македонија</div>
         </div>
 
-        <a href="products.html" class="kopce">Погледни производи</a>
+        <a href="products.html" class="kopce" data-i18n="aboutViewProducts">
+            Погледни производи
+        </a>
     </div>
 
     <div id="desno">
@@ -103,10 +110,10 @@
 <section id="section3">
 
     <div id="naslov">
-        <h2>ШТО СЕ СЛУЧУВА СО BON ДЕНЕС?</h2>
-        <h1>Денес, BON е повеќе од бренд.</h1>
+        <h2 data-i18n="aboutTodayLabel">ШТО СЕ СЛУЧУВА СО BON ДЕНЕС?</h2>
+        <h1 data-i18n="aboutTodayTitle">Денес, BON е повеќе од бренд.</h1>
 
-        <p>
+        <p data-i18n-html="aboutTodayDescription">
             Со истата посветеност и љубов што нѐ водеше од првиот ден,<br>
             продолжуваме да создаваме производи што носат квалитет, вкус и доверба.
         </p>
@@ -119,20 +126,20 @@
 
                 <div class="karticka">
                     <img src="images/vegan.png">
-                    <h3>ПРИРОДНИ СОСТОЈКИ</h3>
-                    <p>Користиме 100% природни состојки.</p>
+                    <h3 data-i18n="aboutNaturalTitle">ПРИРОДНИ СОСТОЈКИ</h3>
+                    <p data-i18n="aboutNaturalText">Користиме 100% природни состојки.</p>
                 </div>
 
                 <div class="karticka">
                     <img src="images/high-quality.png">
-                    <h3>ВИСОК КВАЛИТЕТ</h3>
-                    <p>Секој производ поминува низ строги контроли.</p>
+                    <h3 data-i18n="aboutQualityTitle">ВИСОК КВАЛИТЕТ</h3>
+                    <p data-i18n="aboutQualityText">Секој производ поминува низ строги контроли.</p>
                 </div>
 
                 <div class="karticka">
                     <img src="images/heart.png">
-                    <h3>ДОВЕРБА</h3>
-                    <p>20+ години доверба од купувачите.</p>
+                    <h3 data-i18n="aboutTrustTitle">ДОВЕРБА</h3>
+                    <p data-i18n="aboutTrustText">20+ години доверба од купувачите.</p>
                 </div>
 
             </div>
@@ -141,20 +148,20 @@
 
                 <div class="karticka">
                     <img src="images/map.png">
-                    <h3>ЛОКАЛНО</h3>
-                    <p>Го поддржуваме локалното производство.</p>
+                    <h3 data-i18n="aboutLocalTitle">ЛОКАЛНО</h3>
+                    <p data-i18n="aboutLocalText">Го поддржуваме локалното производство.</p>
                 </div>
 
                 <div class="karticka">
                     <img src="images/idea.png">
-                    <h3>РАЗВОЈ</h3>
-                    <p>Инвестираме во нови технологии и производи.</p>
+                    <h3 data-i18n="aboutDevelopmentTitle">РАЗВОЈ</h3>
+                    <p data-i18n="aboutDevelopmentText">Инвестираме во нови технологии и производи.</p>
                 </div>
 
                 <div class="karticka">
                     <img src="images/group.png">
-                    <h3>ТИМ СО СРЦЕ</h3>
-                    <p>Позади секој производ стои тим од посветени луѓе.</p>
+                    <h3 data-i18n="aboutTeamTitle">ТИМ СО СРЦЕ</h3>
+                    <p data-i18n="aboutTeamText">Позади секој производ стои тим од посветени луѓе.</p>
                 </div>
 
             </div>
@@ -170,7 +177,9 @@
 
         <div class="infoBlock">
             <img src="images/maps-and-flags.png">
-            <p>Стопански комплекс с. Зубовце,<br>Гостивар</p>
+            <p data-i18n-html="aboutFooterAddress">
+                Стопански комплекс с. Зубовце,<br>Гостивар
+            </p>
         </div>
 
         <div class="infoBlock">
@@ -195,15 +204,15 @@
 
     </div>
 
-    <div id="footerBottom">
+    <div id="footerBottom" data-i18n="copyright">
         © ИнтерКафе 2026. Сите права се задржани.
     </div>
 
 </div>
 
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/translations.js"></script>
+
 </body>
 </html>

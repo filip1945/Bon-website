@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="mk">
 <head>
@@ -13,7 +14,6 @@
 
 <div class="bg"></div>
 
-
 <div id="nav">
 
     <div id="logo">
@@ -25,14 +25,19 @@
     </button>
 
     <div id="menu">
-        <a href="index.html">Почетна</a>
-        <a href="about us.html">За нас</a>
-        <a href="products.html">Производи</a>
-        <a href="contact.html">Контакт</a>
+        <a href="index.html" data-i18n="navHome">Почетна</a>
+        <a href="about us.html" data-i18n="navAbout">За нас</a>
+        <a href="products.html" data-i18n="navProducts">Производи</a>
+        <a href="contact.html" data-i18n="navContact">Контакт</a>
+
+        <div class="language-switch">
+            <button type="button" class="lang-btn" data-lang="mk">MK</button>
+            <span>|</span>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
     </div>
 
 </div>
-
 
 <section id="hero" class="product-details">
 
@@ -44,38 +49,46 @@
 
         <h1 id="productTitle"></h1>
 
-        <p id="opis">
-
-        </p>
+        <p id="opis"></p>
 
         <div id="nutritivnost">
 
             <div class="nutri">
                 <span id="kalorii">320</span>
-                <p>Калории</p>
+                <p data-i18n="productCalories">Калории</p>
             </div>
 
             <div class="nutri">
                 <span id="proteini">12g</span>
-                <p>Протеини</p>
+                <p data-i18n="productProtein">Протеини</p>
             </div>
 
             <div class="nutri">
                 <span id="jaglehidrati">25g</span>
-                <p>Јаглехидрати</p>
+                <p data-i18n="productCarbs">Јаглехидрати</p>
             </div>
 
             <div class="nutri">
                 <span id="masti">8g</span>
-                <p>Масти</p>
+                <p data-i18n="productFat">Масти</p>
             </div>
 
         </div>
-        <p>Нутритивните вредности се однесуваат на 100г од производот.</p>
+
+        <p data-i18n="productNutritionNote">
+            Нутритивните вредности се однесуваат на 100г од производот.
+        </p>
+
         <br>
-        <p>Достапно во пакување од: <span id="pakuvanje"></span></p>
+
+        <p>
+            <span data-i18n="productPackaging">Достапно во пакување од:</span>
+            <span id="pakuvanje"></span>
+        </p>
+
         <br>
-        <button id="kopce" onclick="window.location.href='contact.html'">
+
+        <button id="kopce" onclick="window.location.href='contact.html'" data-i18n="productContact">
             Контактирај не
         </button>
 
@@ -83,14 +96,13 @@
 
 </section>
 
-<!-- FOOTER -->
 <div id="footer">
 
     <div class="footerInfo">
 
         <div class="infoBlock">
             <img src="images/maps-and-flags.png">
-            <p>с. Зубовце, Гостивар</p>
+            <p data-i18n="productsFooterAddress">с. Зубовце, Гостивар</p>
         </div>
 
         <div class="infoBlock">
@@ -115,16 +127,16 @@
 
     </div>
 
-    <div id="footerBottom">
+    <div id="footerBottom" data-i18n="copyright">
         © ИнтерКафе 2026. Сите права се задржани.
     </div>
 
 </div>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="js/product.js"></script>
 <script src="js/script.js"></script>
-</body>
+<script src="js/translations.js"></script>
 
+</body>
 </html>

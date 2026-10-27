@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="mk" xmlns="http://www.w3.org/1999/html">
+<html lang="mk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/lifce.png">
-
 </head>
 
 <body>
@@ -23,10 +23,16 @@
   </button>
 
   <div id="menu">
-    <a href="index.html">Почетна</a>
-    <a href="about us.html">За нас</a>
-    <a href="products.html">Производи</a>
-    <a href="contact.html">Контакт</a>
+    <a href="index.html" data-i18n="navHome">Почетна</a>
+    <a href="about us.html" data-i18n="navAbout">За нас</a>
+    <a href="products.html" data-i18n="navProducts">Производи</a>
+    <a href="contact.html" data-i18n="navContact">Контакт</a>
+
+    <div class="language-switch">
+      <button type="button" class="lang-btn" data-lang="mk">MK</button>
+      <span>|</span>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+    </div>
   </div>
 
 </div>
@@ -35,9 +41,12 @@
 
   <div id="hero-text">
 
-    <h1>Нашите <span>Производи</span></h1>
+    <h1>
+      <span data-i18n="productsHeroOur">Нашите</span>
+      <span data-i18n="productsHeroProducts">Производи</span>
+    </h1>
 
-    <p>
+    <p data-i18n="productsHeroDescription">
       Широк избор на квалитетни производи подготвени
       со грижа, традиција и посветеност.
     </p>
@@ -46,17 +55,17 @@
 
       <div class="smallbox">
         <h3>100%</h3>
-        <span>Природно</span>
+        <span data-i18n="productsNatural">Природно</span>
       </div>
 
       <div class="smallbox">
         <h3>20+</h3>
-        <span>Години искуство</span>
+        <span data-i18n="yearsExperience">Години искуство</span>
       </div>
 
       <div class="smallbox">
         <h3>BON</h3>
-        <span>Квалитет</span>
+        <span data-i18n="productsQuality">Квалитет</span>
       </div>
 
     </div>
@@ -68,51 +77,53 @@
 <section id="kategorii">
 
   <div id="kat-naslov">
-    <h2>КАТЕГОРИИ</h2>
-    <h1>Избери ја категоријата од интерес</h1>
-    <p>Откриј го целосниот асортиман на BON производи.</p>
+    <h2 data-i18n="productsCategoriesLabel">КАТЕГОРИИ</h2>
+    <h1 data-i18n="productsCategoriesTitle">Избери ја категоријата од интерес</h1>
+    <p data-i18n="productsCategoriesDescription">
+      Откриј го целосниот асортиман на BON производи.
+    </p>
   </div>
 
   <div id="kat-grid">
 
     <a href="category.html?cat=kafe" class="karticka">
       <img src="images/coffee-seed.png">
-      <h3>КАФЕ</h3>
+      <h3 data-i18n="categoryCoffee">КАФЕ</h3>
     </a>
 
     <a href="category.html?cat=kikiriki" class="karticka">
       <img src="images/kikirika.png">
-      <h3>КИКИРИКИ</h3>
+      <h3 data-i18n="categoryPeanuts">КИКИРИКИ</h3>
     </a>
 
     <a href="category.html?cat=semki" class="karticka">
       <img src="images/food.png">
-      <h3>СЕМКИ И СОНЧОГЛЕД</h3>
+      <h3 data-i18n="categorySunflower">СЕМКИ И СОНЧОГЛЕД</h3>
     </a>
 
     <a href="category.html?cat=apetisani" class="karticka">
       <img src="images/nut.png">
-      <h3>АПЕТИСАНИ</h3>
+      <h3 data-i18n="categoryNuts">АПЕТИСАНИ</h3>
     </a>
 
     <a href="category.html?cat=zrnesti" class="karticka">
       <img src="images/bean.png">
-      <h3>ЗРНЕСТИ ПРОИЗВОДИ</h3>
+      <h3 data-i18n="categoryGrains">ЗРНЕСТИ ПРОИЗВОДИ</h3>
     </a>
 
     <a href="category.html?cat=suvo" class="karticka">
       <img src="images/raisins.png">
-      <h3>СУВО ОВОШЈЕ</h3>
+      <h3 data-i18n="categoryDriedFruit">СУВО ОВОШЈЕ</h3>
     </a>
 
     <a href="category.html?cat=seminja" class="karticka">
       <img src="images/sesame.png">
-      <h3>СЕМИЊА</h3>
+      <h3 data-i18n="categorySeeds">СЕМИЊА</h3>
     </a>
 
     <a href="category.html?cat=cooking" class="karticka">
       <img src="images/chef.png">
-      <h3>COOKING</h3>
+      <h3 data-i18n="categoryCooking">COOKING</h3>
     </a>
 
   </div>
@@ -125,7 +136,7 @@
 
     <div class="infoBlock">
       <img src="images/maps-and-flags.png">
-      <p>с. Зубовце, Гостивар</p>
+      <p data-i18n="productsFooterAddress">с. Зубовце, Гостивар</p>
     </div>
 
     <div class="infoBlock">
@@ -150,15 +161,15 @@
 
   </div>
 
-  <div id="footerBottom">
+  <div id="footerBottom" data-i18n="copyright">
     © ИнтерКафе 2026. Сите права се задржани.
   </div>
 
 </div>
 
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/translations.js"></script>
+
 </body>
 </html>

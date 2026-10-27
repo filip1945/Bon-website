@@ -1,18 +1,64 @@
 window.addEventListener("load", function () {
 
+
     const contactForm = document.getElementById("contact-form");
     const sendButton = document.getElementById("sendButton");
     const formStatus = document.getElementById("formStatus");
 
+    function getFormTranslation(key) {
+        const lang = localStorage.getItem("bonLanguage") || "mk";
+
+        if (typeof translations !== "undefined") {
+            return translations[lang]?.[key] || translations.mk?.[key] || "";
+        }
+
+        const fallback = {
+            mk: {
+                contactSendButton: "Испрати порака",
+                contactSending: "Се испраќа...",
+                contactSuccess: "Вашата порака е успешно испратена!",
+                contactError: "Настана грешка. Обидете се повторно."
+            },
+            en: {
+                contactSendButton: "Send Message",
+                contactSending: "Sending...",
+                contactSuccess: "Your message has been sent successfully!",
+                contactError: "An error occurred. Please try again."
+            }
+        };
+
+        return fallback[lang]?.[key] || fallback.mk[key] || "";
+    }
+
     if (contactForm) {
+        let isSending = false;
+        let statusKey = "";
+
+        function updateFormLanguage() {
+            if (isSending) {
+                sendButton.textContent = getFormTranslation("contactSending");
+            } else {
+                sendButton.textContent = getFormTranslation("contactSendButton");
+            }
+
+            if (statusKey) {
+                formStatus.textContent = getFormTranslation(statusKey);
+            }
+        }
+
+        document.addEventListener("languageChanged", updateFormLanguage);
 
         contactForm.addEventListener("submit", function (event) {
-
             event.preventDefault();
 
+            if (isSending) return;
+
+            isSending = true;
+            statusKey = "";
+
             sendButton.disabled = true;
-            sendButton.innerText = "Се испраќа...";
-            formStatus.innerText = "";
+            sendButton.textContent = getFormTranslation("contactSending");
+            formStatus.textContent = "";
 
             emailjs.sendForm(
                 "service_jc3sf2m",
@@ -23,29 +69,24 @@ window.addEventListener("load", function () {
                 }
             )
                 .then(function () {
-
-                    formStatus.innerText = "Пораката е успешно испратена.";
+                    statusKey = "contactSuccess";
+                    formStatus.textContent = getFormTranslation(statusKey);
                     contactForm.reset();
-
                 })
                 .catch(function (error) {
-
                     console.log("EMAILJS ERROR:", error);
 
-                    formStatus.innerText =
-                        "Грешка " + error.status + ": " + error.text;
-
+                    statusKey = "contactError";
+                    formStatus.textContent = getFormTranslation(statusKey);
                 })
                 .finally(function () {
-
+                    isSending = false;
                     sendButton.disabled = false;
-                    sendButton.innerText = "Испрати порака";
-
+                    sendButton.textContent = getFormTranslation("contactSendButton");
                 });
-
         });
-
     }
+
 
     if (typeof anime === "undefined") return;
 
@@ -274,11 +315,15 @@ window.addEventListener("load", function () {
         duration: 1600,
         easing: "easeOutExpo"
     });
+
     const hamburger = document.getElementById("hamburger");
     const menu = document.getElementById("menu");
 
-    hamburger.addEventListener("click", function () {
-        menu.classList.toggle("active");
-    });
+    if (hamburger && menu) {
+        hamburger.addEventListener("click", function () {
+            menu.classList.toggle("active");
+        });
+    }
+
 
 });

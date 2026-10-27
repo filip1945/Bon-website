@@ -1,24 +1,39 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    const banner = document.getElementById("cookie-banner");
-    const accept = document.getElementById("accept-cookies");
-    const reject = document.getElementById("reject-cookies");
+    const banner = document.getElementById("cookieBanner");
+    const acceptButton = document.getElementById("cookieAccept");
+    const rejectButton = document.getElementById("cookieReject");
+    const settingsButton = document.getElementById("cookieSettings");
 
-    if (!banner || !accept || !reject) return;
+    if (!banner || !acceptButton || !rejectButton) return;
 
-    const choice = localStorage.getItem("bon-cookie-consent");
+    const savedConsent = localStorage.getItem("bonCookieConsent");
 
-    if (!choice) {
-        banner.style.display = "block";
+    if (savedConsent !== "accepted" && savedConsent !== "rejected") {
+        banner.hidden = false;
     }
 
-    accept.addEventListener("click", () => {
-        localStorage.setItem("bon-cookie-consent", "accepted");
-        banner.style.display = "none";
+    if (settingsButton) {
+        settingsButton.addEventListener("click", () => {
+            banner.hidden = false;
+        });
+    }
+
+    acceptButton.addEventListener("click", () => {
+        localStorage.setItem("bonCookieConsent", "accepted");
+        banner.hidden = true;
+
+        document.dispatchEvent(new CustomEvent("cookieConsentChanged", {
+            detail: { analytics: true }
+        }));
     });
 
-    reject.addEventListener("click", () => {
-        localStorage.setItem("bon-cookie-consent", "rejected");
-        banner.style.display = "none";
+    rejectButton.addEventListener("click", () => {
+        localStorage.setItem("bonCookieConsent", "rejected");
+        banner.hidden = true;
+
+        document.dispatchEvent(new CustomEvent("cookieConsentChanged", {
+            detail: { analytics: false }
+        }));
     });
 });

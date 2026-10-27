@@ -1,12 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="mk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакт</title>
+    <title>Контакт - BON</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/lifce.png">
 </head>
 
@@ -17,7 +17,7 @@
 <div id="nav">
 
     <div id="logo">
-        <img src="images/logo%20(2).png">
+        <img src="images/logo%20(2).png" alt="BON">
     </div>
 
     <button id="hamburger" aria-label="Отвори мени">
@@ -25,10 +25,15 @@
     </button>
 
     <div id="menu">
-        <a href="index.html">Почетна</a>
-        <a href="about us.html">За нас</a>
-        <a href="products.html">Производи</a>
-        <a href="contact.html">Контакт</a>
+        <a href="index.html" data-i18n="navHome">Почетна</a>
+        <a href="about us.html" data-i18n="navAbout">За нас</a>
+        <a href="products.html" data-i18n="navProducts">Производи</a>
+        <a href="contact.html" data-i18n="navContact">Контакт</a>
+
+        <div class="language-switch">
+            <button type="button" class="lang-btn active" data-lang="mk">MK</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
     </div>
 
 </div>
@@ -36,9 +41,13 @@
 <div id="prvdel">
 
     <div id="desen">
-        <h1>Контакт</h1>
-        <h3>Ние сме тука за вас!</h3>
-        <p>
+        <h1 data-i18n="contactTitle">Контакт</h1>
+
+        <h3 data-i18n="contactSubtitle">
+            Ние сме тука за вас!
+        </h3>
+
+        <p data-i18n="contactDescription">
             Доколку имате прашања, предлози или соработка,
             слободно контактирајте не.
             Ќе ви одговориме во најкраток можен рок.
@@ -46,7 +55,7 @@
     </div>
 
     <div id="lev">
-        <img src="images/ververica.png">
+        <img src="images/ververica.png" alt="BON">
     </div>
 
 </div>
@@ -55,62 +64,78 @@
 
     <div id="socijalni">
 
-        <h3>Контакт информации</h3>
+        <h3 data-i18n="contactInformation">
+            Контакт информации
+        </h3>
 
         <div class="kontakt">
-            <img src="images/maps-and-flags.png">
+            <img src="images/maps-and-flags.png" alt="Location">
+
             <div class="info">
-                <h4>Локација</h4>
-                <p>Стопански комплекс с. Зубовце,<br>Гостивар Македонија</p>
+                <h4 data-i18n="contactLocation">Локација</h4>
+
+                <p data-i18n-html="contactAddress">
+                    Стопански комплекс с. Зубовце,<br>
+                    Гостивар Македонија
+                </p>
             </div>
         </div>
 
         <div class="kontakt">
-            <img src="images/email.png">
+            <img src="images/email.png" alt="Email">
+
             <div class="info">
-                <h4>Е-пошта</h4>
+                <h4 data-i18n="contactEmail">Е-пошта</h4>
                 <p>intercafegostivar@hotmail.com</p>
             </div>
         </div>
 
         <div class="kontakt">
-            <img src="images/phone-call.png">
+            <img src="images/phone-call.png" alt="Phone">
+
             <div class="info">
-                <h4>Телефон</h4>
+                <h4 data-i18n="contactPhone">Телефон</h4>
                 <p>+389 42 215 333</p>
             </div>
         </div>
 
         <a href="https://www.facebook.com/profile.php?id=61584873085288"
            target="_blank"
+           rel="noopener noreferrer"
            class="kontakt-link">
+
             <div class="kontakt">
-                <img src="images/facebook%20(1).png">
+                <img src="images/facebook%20(1).png" alt="Facebook">
+
                 <div class="info">
                     <h4>Facebook</h4>
                     <p>Bon Products</p>
                 </div>
             </div>
+
         </a>
 
         <a href="https://www.instagram.com/bonproducts.mk/"
            target="_blank"
+           rel="noopener noreferrer"
            class="kontakt-link">
+
             <div class="kontakt">
-                <img src="images/instagram%20(1).png">
+                <img src="images/instagram%20(1).png" alt="Instagram">
+
                 <div class="info">
                     <h4>Instagram</h4>
                     <p>bonproducts.mk</p>
                 </div>
             </div>
+
         </a>
 
     </div>
 
-
     <div id="forma">
 
-        <div id="naslovForma">
+        <div id="naslovForma" data-i18n="contactFormTitle">
             Испратете ни порака
         </div>
 
@@ -124,6 +149,7 @@
                             type="text"
                             name="user_name"
                             placeholder="Име и презиме"
+                            data-i18n-placeholder="contactNamePlaceholder"
                             required
                     >
 
@@ -131,6 +157,7 @@
                             type="email"
                             name="user_email"
                             placeholder="Е-пошта"
+                            data-i18n-placeholder="contactEmailPlaceholder"
                             required
                     >
 
@@ -140,21 +167,29 @@
                         type="tel"
                         name="user_phone"
                         placeholder="Телефон"
+                        data-i18n-placeholder="contactPhonePlaceholder"
                 >
 
                 <input
                         type="text"
                         name="subject"
                         placeholder="Предмет"
+                        data-i18n-placeholder="contactSubjectPlaceholder"
                         required
                 >
 
                 <textarea
                         name="message"
                         placeholder="Вашата порака"
-                        required></textarea>
+                        data-i18n-placeholder="contactMessagePlaceholder"
+                        required
+                ></textarea>
 
-                <button type="submit" id="sendButton">
+                <button
+                        type="submit"
+                        id="sendButton"
+                        data-i18n="contactSendButton"
+                >
                     Испрати порака
                 </button>
 
@@ -165,26 +200,26 @@
         </form>
 
     </div>
+
 </div>
 
 <div id="mapa">
     <iframe
             src="https://www.google.com/maps?q=INTER-KAFE+(BON+CAFE)+Gostivar&output=embed"
-            allowfullscreen=""
-            loading="lazy">
-    </iframe>
+            allowfullscreen
+            loading="lazy"
+            title="BON Location"
+    ></iframe>
 </div>
 
-<div id="footerBottom" class="contactFooter">
+<div id="footerBottom" class="contactFooter" data-i18n="copyright">
     © ИнтерКафе 2026. Сите права се задржани.
 </div>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <script src="js/script.js"></script>
+<script src="js/translations.js"></script>
 
 </body>
 </html>
